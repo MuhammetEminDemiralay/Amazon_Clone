@@ -22,7 +22,7 @@ export default [
     title: "New 2021 Imac",
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/imac1.jpg',
     avgRating: 3.8,
-    ratings: 2989,
+    ratings: 3505,
     price: 4206.9,
   },
   {
@@ -30,7 +30,7 @@ export default [
     title: "Havit Mechanical Keyboard Wired 89 Keys Gaming Keyboard Red Switch Keyboard with PBT Keycaps for PC Gamer",
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/keyboard1.jpg',
     avgRating: 4.8,
-    ratings: 2989,
+    ratings: 2480,
     price: 99.98,
     oldPrice: 120.06,
   },
@@ -44,7 +44,7 @@ export default [
     oldPrice: 120.06,
   },
   {
-    id: '5',
+    id: '6',
     title: "Mouse Havit Mechanical Keyboard Wired 89 Keys Gaming Keyboard",
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse1.jpg',
     avgRating: 4.8,
@@ -53,7 +53,7 @@ export default [
     oldPrice: 120.06,
   },
   {
-    id: '5',
+    id: '7',
     title: "Mouse Havit Mechanical Keyboard Wired 89 Keys Gaming Keyboard",
     image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/mouse2.jpg',
     avgRating: 4.8,
