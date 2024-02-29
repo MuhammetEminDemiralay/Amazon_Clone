@@ -7,7 +7,7 @@ export default function App() {
     <View>
       <StatusBar/>
       {/* <HomeScreen/> */}
-      <ProductScreen />
+      <ProductScreen/>
     </View>
   );
 }
