@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import styles from "./styles"
 import product from "../../data/product"
 import { Picker } from '@react-native-picker/picker'
@@ -12,9 +12,11 @@ const index = () => {
     const [quantity, setQuantity] = useState(1)
 
     return (
-        <View style={{padding : 10, marginTop : 25}}>
+        <ScrollView
+            showsVerticalScrollIndicator={false}
+            style={{ padding: 10, marginTop: 25 }}>
             <Text style={styles.title}>{product.title}</ Text>
-                <ImageCarousel images={product.images}/>
+            <ImageCarousel images={product.images} />
             <Picker
                 selectedValue={selectOption}
                 onValueChange={(itemValue) =>
@@ -41,11 +43,11 @@ const index = () => {
                 }
             </Text>
             <View>
-                <QuantitySelector quantity={quantity} setQuantity={setQuantity}/>
+                <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
             </View>
-            <Button containerStyle={{backgroundColor : '#e3c905'}} text={"Add To Cart"} onPress={() => {console.warn("Add to cart")}}/>
-            <Button text={"Buy Now"} onPress={() => {console.warn("Buy now")}}/>
-        </View>
+            <Button containerStyle={{ backgroundColor: '#e3c905' }} text={"Add To Cart"} onPress={() => { console.warn("Add to cart") }} />
+            <Button text={"Buy Now"} onPress={() => { console.warn("Buy now") }} />
+        </ScrollView>
     )
 }
 
