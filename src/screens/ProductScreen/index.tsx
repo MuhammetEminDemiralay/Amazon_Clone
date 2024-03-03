@@ -6,10 +6,16 @@ import { Picker } from '@react-native-picker/picker'
 import QuantitySelector from '../../components/QuantitySelector'
 import Button from '../../components/Button'
 import ImageCarousel from '../../components/ImageCarousel'
-const index = () => {
+import { useRoute } from '@react-navigation/native'
+
+
+const ProductScreen = () => {
 
     const [selectOption, setSelectOption] = useState(product.options ? product.options[0] : null)
     const [quantity, setQuantity] = useState(1)
+    const route = useRoute();
+    console.log(route.params)
+
 
     return (
         <ScrollView
@@ -51,4 +57,4 @@ const index = () => {
     )
 }
 
-export default index
+export default ProductScreen

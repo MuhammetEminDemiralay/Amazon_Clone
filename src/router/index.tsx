@@ -3,12 +3,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'
 import BottomTabNav from './bottomTabnavigator';
 
+
 const Root = createStackNavigator();
 
 const BottomTabNavigator = () => {
     return (
         <NavigationContainer>
-            <Root.Navigator>
+            <Root.Navigator screenOptions={{ headerShown: false }}>
                 <Root.Screen component={BottomTabNav} name='HomeTabs' />
             </Root.Navigator>
         </NavigationContainer>

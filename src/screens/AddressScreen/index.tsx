@@ -96,7 +96,6 @@ const AddressScreen = () => {
                 </View>
 
                 <Button text='checkout' onPress={onCheckout}></Button>
-
             </ScrollView>
         </KeyboardAvoidingView>
     )

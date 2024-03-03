@@ -3,14 +3,13 @@ import { View, StyleSheet, FlatList } from 'react-native'
 import ProductItem from "../../components/ProductItem"
 import products from "../../data/products"
 
-const HomeScreen = () => {
-
+const HomeScreen = ({searchValue} : {searchValue : string}) => {
     return (
         <View style={styles.page}>
             <FlatList
                 data={products}
                 showsVerticalScrollIndicator={false}
-                renderItem={({ item , index}) =>
+                renderItem={({ item, index }) =>
                     <ProductItem key={index} item={item} />
                 }
             />

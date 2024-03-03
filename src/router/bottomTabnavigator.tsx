@@ -1,8 +1,10 @@
 import React from 'react'
 import HomeScreen from '../screens/HomeScreen'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ShoopingCartScreen from '../screens/ShoopingCartScreen';
 import { Entypo, FontAwesome, AntDesign, Feather } from '@expo/vector-icons';
+import HomeStack from './HomeStack';
+import ShoppingCartStack from './ShoppingCartStack';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -16,8 +18,8 @@ const BottomTabNav = () => {
             }}
         >
             <Tab.Screen
-                name='Home'
-                component={HomeScreen}
+                name='home'
+                component={HomeStack}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Entypo name="home" size={24} color={color} />
@@ -35,7 +37,7 @@ const BottomTabNav = () => {
             />
             <Tab.Screen
                 name='ShoopingCart'
-                component={ShoopingCartScreen}
+                component={ShoppingCartStack}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <AntDesign name="shoppingcart" size={24} color={color} />
