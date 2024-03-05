@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo, FontAwesome, AntDesign, Feather } from '@expo/vector-icons';
 import HomeStack from './HomeStack';
 import ShoppingCartStack from './ShoppingCartStack';
-
+import MenuScreen from '../screens/MenuScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -45,8 +45,8 @@ const BottomTabNav = () => {
                 }}
             />
             <Tab.Screen
-                name='More'
-                component={HomeScreen}
+                name='more'
+                component={MenuScreen}
                 options={{
                     tabBarIcon: ({ color }) => (
                         <Feather name="more-horizontal" size={24} color={color} />
