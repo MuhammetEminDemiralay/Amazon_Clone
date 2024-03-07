@@ -1,6 +1,6 @@
 import { ModelInit, MutableModel, __modelMeta__, ManagedIdentifier } from "@aws-amplify/datastore";
 // @ts-ignore
-import { LazyLoading, LazyLoadingDisabled } from "@aws-amplify/datastore";
+import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@aws-amplify/datastore";
 
 
 
@@ -21,6 +21,7 @@ type EagerProduct = {
   readonly ratings?: number | null;
   readonly price?: number | null;
   readonly oldPrice?: number | null;
+  readonly cartProducts?: (CartProduct | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -40,6 +41,7 @@ type LazyProduct = {
   readonly ratings?: number | null;
   readonly price?: number | null;
   readonly oldPrice?: number | null;
+  readonly cartProducts: AsyncCollection<CartProduct>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -59,7 +61,8 @@ type EagerCartProduct = {
   readonly userSub: string;
   readonly quantity?: number | null;
   readonly option?: string | null;
-  readonly productId: string;
+  readonly productID: string;
+  readonly product?: Product | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -73,7 +76,8 @@ type LazyCartProduct = {
   readonly userSub: string;
   readonly quantity?: number | null;
   readonly option?: string | null;
-  readonly productId: string;
+  readonly productID: string;
+  readonly product: AsyncItem<Product | undefined>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }

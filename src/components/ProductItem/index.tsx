@@ -43,13 +43,13 @@ const ProductItem = ({ item }: ProductItemProps) => {
                                     color="#e47911" />
                             ))
                         }
-                        <Text>{item.ratings}</Text>
+                        <Text>{item.ratings.toFixed(0)}</Text>
                     </View>
                     <Text style={styles.price}>
-                        from {item.price}
+                        from {item.price.toFixed(2)}
                         {
                             item.oldPrice &&
-                            <Text style={styles.oldPrice}>$17.201</Text>
+                            <Text style={styles.oldPrice}>${item.oldPrice.toFixed(2)}</Text>
                         }
                     </Text>
                 </View>

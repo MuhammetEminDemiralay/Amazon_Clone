@@ -20,6 +20,11 @@ export const getProduct = /* GraphQL */ `query GetProduct($id: ID!) {
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -110,7 +115,25 @@ export const getCartProduct = /* GraphQL */ `query GetCartProduct($id: ID!) {
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -134,7 +157,7 @@ export const listCartProducts = /* GraphQL */ `query ListCartProducts(
       userSub
       quantity
       option
-      productId
+      productID
       createdAt
       updatedAt
       _version
@@ -168,7 +191,7 @@ export const syncCartProducts = /* GraphQL */ `query SyncCartProducts(
       userSub
       quantity
       option
-      productId
+      productID
       createdAt
       updatedAt
       _version

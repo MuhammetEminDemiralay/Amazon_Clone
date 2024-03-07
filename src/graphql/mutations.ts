@@ -23,6 +23,11 @@ export const createProduct = /* GraphQL */ `mutation CreateProduct(
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -50,6 +55,11 @@ export const updateProduct = /* GraphQL */ `mutation UpdateProduct(
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -77,6 +87,11 @@ export const deleteProduct = /* GraphQL */ `mutation DeleteProduct(
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -98,7 +113,25 @@ export const createCartProduct = /* GraphQL */ `mutation CreateCartProduct(
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -120,7 +153,25 @@ export const updateCartProduct = /* GraphQL */ `mutation UpdateCartProduct(
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -142,7 +193,25 @@ export const deleteCartProduct = /* GraphQL */ `mutation DeleteCartProduct(
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version

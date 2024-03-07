@@ -75,6 +75,22 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
+                "cartProducts": {
+                    "name": "cartProducts",
+                    "isArray": true,
+                    "type": {
+                        "model": "CartProduct"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "isArrayNullable": true,
+                    "association": {
+                        "connectionType": "HAS_MANY",
+                        "associatedWith": [
+                            "product"
+                        ]
+                    }
+                },
                 "createdAt": {
                     "name": "createdAt",
                     "isArray": false,
@@ -148,12 +164,27 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "productId": {
-                    "name": "productId",
+                "productID": {
+                    "name": "productID",
                     "isArray": false,
                     "type": "ID",
                     "isRequired": true,
                     "attributes": []
+                },
+                "product": {
+                    "name": "product",
+                    "isArray": false,
+                    "type": {
+                        "model": "Product"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "productID"
+                        ]
+                    }
                 },
                 "createdAt": {
                     "name": "createdAt",
@@ -201,5 +232,5 @@ export const schema = {
     "enums": {},
     "nonModels": {},
     "codegenVersion": "3.4.4",
-    "version": "c506c7cfca917efb17afdb6c99e948b4"
+    "version": "284a26f973803a5566775d638693cc0e"
 };

@@ -20,6 +20,11 @@ export const onCreateProduct = /* GraphQL */ `subscription OnCreateProduct($filt
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -44,6 +49,11 @@ export const onUpdateProduct = /* GraphQL */ `subscription OnUpdateProduct($filt
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -68,6 +78,11 @@ export const onDeleteProduct = /* GraphQL */ `subscription OnDeleteProduct($filt
     ratings
     price
     oldPrice
+    cartProducts {
+      nextToken
+      startedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -88,7 +103,25 @@ export const onCreateCartProduct = /* GraphQL */ `subscription OnCreateCartProdu
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -109,7 +142,25 @@ export const onUpdateCartProduct = /* GraphQL */ `subscription OnUpdateCartProdu
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
@@ -130,7 +181,25 @@ export const onDeleteCartProduct = /* GraphQL */ `subscription OnDeleteCartProdu
     userSub
     quantity
     option
-    productId
+    productID
+    product {
+      id
+      title
+      description
+      image
+      images
+      options
+      avgRating
+      ratings
+      price
+      oldPrice
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      __typename
+    }
     createdAt
     updatedAt
     _version
