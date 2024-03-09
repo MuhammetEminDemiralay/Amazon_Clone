@@ -13,7 +13,7 @@ const ShoppingCartStack = () => {
             <Stack.Screen
                 options={{ title: "Shopping cart" }}
                 component={ShoppingCartScreen}
-                name='Shooping' />
+                name='ShoopingCart' />
             <Stack.Screen
                 options={{ title: "Address" }}
                 component={AddressScreen}

@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import { NavigationContainer } from '@react-navigation/native';
-import { Header, createStackNavigator } from '@react-navigation/stack'
-import BottomTabNav from './bottomTabnavigator';
+import { createStackNavigator } from '@react-navigation/stack'
 import HomeScreen from '../screens/HomeScreen';
 import ProductScreen from '../screens/ProductScreen';
-import { SafeAreaView, Text, TextInput, View } from 'react-native';
+import { SafeAreaView, TextInput, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
@@ -52,7 +50,7 @@ const HomeStack = () => {
             <Stack.Screen
                 options={{ title: "Home" }}
                 name='HomeScreen'>
-                { () =><HomeScreen searchValue={searchValue}/> }
+                {() => <HomeScreen searchValue={searchValue} />}
             </Stack.Screen>
             <Stack.Screen
                 component={ProductScreen}

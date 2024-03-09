@@ -1,21 +1,18 @@
 import React from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native'
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native'
 import CartProductItem from "../../components/CartProductItem"
 import Button from "../../components/Button"
 import products from "../../data/cart"
 import { useNavigation } from '@react-navigation/native'
+import { CartProduct, Product } from '../../models'
+import { useEffect, useState } from 'react'
 
 
 const ShoppingCartScreen = () => {
-
-    const totalPrice = products.reduce(
-        (summedPrice, product) =>
-            (summedPrice + product.item.price + product.quantity), 0);
     const navigation = useNavigation();
+    const [cartProducts, setCartProducts] = useState<CartProduct[]>([])
 
-    const onCheckout = () => {
-        navigation.navigate('Address')
-    }
+
 
     return (
         <View style={styles.page}>
@@ -27,11 +24,11 @@ const ShoppingCartScreen = () => {
                 }
                 ListHeaderComponent={() => (
                     <View>
-                        <Text style={{ fontSize: 18, fontWeight: '500' }}>Subtotal ({products.length}) items :
-                            <Text style={{ color: '#e47911' }}>${totalPrice.toFixed(2)}</Text>
+                        <Text style={{ fontSize: 18, fontWeight: '500' }}>Subtotal ({cartProducts.length}) items :
+                            {/* <Text style={{ color: '#e47911' }}>${cartProducts.totalPrice.toFixed(2)}</Text> */}
                         </Text>
                         <Button text='Proceed to checkout'
-                            onPress={onCheckout}
+                            onPress={() => console.log()}
                             containerStyle={{ backgroundColor: "#f7e300", borderColor: '#c7b702' }}
                         />
                     </View>

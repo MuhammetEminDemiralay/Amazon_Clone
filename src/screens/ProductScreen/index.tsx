@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, ScrollView, ActivityIndicator } from 'react-native'
 import styles from "./styles"
-import product from "../../data/product"
 import { Picker } from '@react-native-picker/picker'
 import QuantitySelector from '../../components/QuantitySelector'
 import Button from '../../components/Button'
 import ImageCarousel from '../../components/ImageCarousel'
 import { useNavigation, useRoute } from '@react-navigation/native'
-import { DataStore } from 'aws-amplify/datastore'
-import { fetchUserAttributes } from 'aws-amplify/auth'
 import { CartProduct, Product } from '../../models'
 
 const ProductScreen = () => {
@@ -19,45 +16,7 @@ const ProductScreen = () => {
     // console.log(route.params)
     const [product, setProduct] = useState<Product | undefined>(undefined)
     const navigation = useNavigation();
-    useEffect(() => {
-        if (!route.params?.id) {
-            return
-        }
-        DataStore.query(Product, route.params.id).then(setProduct)
-    }, [route.params?.id])
-
-
-    useEffect(() => {
-        if (product?.options) {
-            setSelectOption(product.options[0]);
-        }
-    }, [product])
-
-    if (!product) {
-        return (
-            <ActivityIndicator />
-        )
-    }
-
-    const onAddToCart = async () => {
-
-        const userData = fetchUserAttributes();
-
-        if (!product || !userData) {
-            return;
-        }
-
-        const newCartProduct = new CartProduct({
-            userSub: '123456789123456789',
-            quantity,
-            option: selectOption,
-            productID: product.id,
-        });
-
-        await DataStore.save(newCartProduct);
-        navigation.navigate('Shooping');
-    }
-
+  
 
     return (
         <ScrollView
